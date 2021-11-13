@@ -15,7 +15,7 @@ LDFLAGS=
 CFLAGS=-g -Wall
 INCLUDES=-I$(INC_DIR)
 
-.PHONY: all clean install
+.PHONY: all clean install run
 
 all: $(TARGET)
 
@@ -34,6 +34,8 @@ $(OBJS): $(SRCS)
 clean:
 	$(RM) $(BIN_DIR)/$(TARGET) $(OBJS)
 
+run: install
+	$(BIN_DIR)/$(TARGET)
 
 #################################
 # References
