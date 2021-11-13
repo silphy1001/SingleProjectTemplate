@@ -20,15 +20,12 @@ INCLUDES=-I$(INC_DIR)
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	@echo $(CC) $(CFLAGS) $(INCLUDES) $(LDFLAGS) -o $(TARGET) $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) $(LDFLAGS) -o $(TARGET) $(OBJS)
 
 install: $(TARGET)
 	@mv $(TARGET) $(BIN_DIR)/
 
 $(OBJS): $(SRCS)
-	@echo $(OBJS) $(SRCS)
-	@echo $(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $(@:.o=.c)
 	$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $(@:.o=.c)
 
 clean:
